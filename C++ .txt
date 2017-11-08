@@ -1,0 +1,125 @@
+//#include <bits/stdc++.h>
+
+//cin高速化
+cin.sync_with_stdio(false);
+
+//少数以下表示
+double a;
+cout<<fixed<<setprecision(5)<<a<<endl;
+//x以下精度指定
+cout<<setprecision(x)<<～
+
+//文字列入力
+入力"aaa/bbbb"
+string s,t;
+getline(cin,s,'/');
+cin>>t;
+
+//多次元配列初期化
+int a[MAX_SIZE1][MAX_SIZE2];
+fill((*a), (*a) + MAX_SIZE*MAXSIZE2, n);
+vector<int> v(MAX_SIZE):
+fill(v.begin(), v.end(), n);
+
+//配列初期化(-1)
+intdp[][];
+memset(dp,-1,sizeof(dp));
+
+//ユニークソート
+vector<int> v = { 2, 3, 3, 7, 5, 3, 2 };
+sort(v.begin(), v.end()); // { 2, 2, 3, 3, 3, 5, 7 }
+v.erase(unique(v.begin(), v.end()), v.end()); // { 2, 3, 5, 7 }
+
+//降順ソート
+sort(v.begin(),v.end(),greater<int>());
+
+//map
+vector<string>a(N);
+map<string,int>mp;
+mp[a[i]]=i;
+
+
+//繰り返し2乗法(mod)
+ll mod_pow(ll x, ll n, ll mod) {
+	if (n == 0)return 1;
+	ll res = mod_pow(x*x%mod, n / 2, mod);
+	if (n & 1)res = res*x%mod;
+	return res;
+}
+
+//x^n
+using ll = long long;
+ll Pow(ll x, ll n) {
+ ll res = 1;
+ while (n) {
+  if (n%2) {
+   res = res * x;
+  }
+  x = x * x;
+  n /= 2;
+ }
+ return res;
+}
+
+//fib
+|1 1|^N   |1|   |fib(N)|
+|1 0|   * |0| = |fib(N-1)|
+
+
+//ユークリッド互除法最大公約数
+int gcd(int a,intb){
+	if(b==0)return a;
+	return gcd(b,a%b);
+}
+
+//拡張ユークリッド
+//ax+by=1となるx,y
+int extgcd(int a,int b,int&x, int& y){
+	int d=a;
+	if(b!=0){
+		d=extgcd(b,a%b,y,x);
+		y-=(a/b)*x;
+	}else{
+		x=1;y=0;}
+	return d;
+}
+
+//要素iからk個選ぶときの和の列挙
+ for (int i = 0; i < (1 << n); i++) { 	//1<<n=1*(2^n)
+  int sum = 0, cnt = 0;
+  for (int j = 0; j < n; j++) {
+   if (i & (1 << j)) {
+    sum += a[j]; 
+    cnt++;
+   }
+  }
+  if (cnt == k) {
+   // sumを保存する
+  }
+ }
+
+//LIS(LongestIncreasingSubsequence)最長増加部分列
+int dp[max_n]
+fill(dp,dp+N,INF);
+/* *lower_bound */ *upper_bound(dp, dp+N, a[i]) = a[i];
+cout<<lower_bound(dp,dp+N,INF)-dp<<"\n";
+
+nより小さい要素数x
+x=lower_bound(num.begin(),num.end(),n)-num.begin();
+n以下の要素数y
+y=upper_bound(num.begin(),num.end(),n)-num.begin();
+
+//int string　変換
+int a;
+string s;
+string s~to_string(a);
+int a=stoi(s);
+
+// 線分ABと線分CDの交差判定
+bool isIntersected(double ax, double ay, double bx, double by, double cx, double cy, double dx, double dy){
+    double ta = (cx-dx)*(ay-cy)+(cy-dy)*(cx-ax);
+    double tb = (cx-dx)*(by-cy)+(cy-dy)*(cx-bx);
+    double tc = (ax-bx)*(cy-ay)+(ay-by)*(ax-cx);
+    double td = (ax-bx)*(dy-ay)+(ay-by)*(ax-dx);
+    return tc*td < 0 && ta*tb < 0;
+}
