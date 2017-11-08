@@ -1,0 +1,7 @@
+int LIS(vector<int>&a) {
+	vector<int>x(a.size(), INF);
+	rep(i, x.size()) {
+		*lower_bound(x.begin(), x.end(), a[i]) = a[i];
+	}
+	return lower_bound(x.begin(), x.end(), INF) - x.begin();
+}

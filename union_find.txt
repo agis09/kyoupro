@@ -1,0 +1,39 @@
+int par[100000]; //parent
+int rnk[100000]; //depth
+
+//init with n elements
+void init(int n) {
+	for (int i = 0; i < n; i++) {
+		par[i] = i;
+		rnk[i] = 0;
+	}
+}
+//find a root of the tree
+int find(int x) {
+	if (par[x] == x) {
+		return x;
+	}
+	else {
+		return par[x] = find(par[x]);
+	}
+}
+
+//merge the sets contains x,y
+void unite(int x, int y) {
+	x = find(x);
+	y = find(y);
+	if (x == y)return;
+
+	if (rnk[x] < rnk[y]) {
+		par[x] = y;
+	}
+	else {
+		par[y] = x;
+		if (rnk[x] == rnk[y])rnk[x]++;
+	}
+}
+
+//the set contains x and y or not
+bool same(int x, int y) {
+	return find(x) == find(y);
+}
