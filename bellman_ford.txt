@@ -7,7 +7,7 @@ edge es[MAX_E];
 int d[MAX_V];
 int V, E;
 
-//s�Ԗڂ̒��_����e���_�ւ̍ŒZ����
+//s番目の頂点から各頂点への最短距離
 void bellman_ford(int s) {
 	for (int i = 0; i < V; i++)d[i] = INF;
 	d[s] = 0;
@@ -23,7 +23,7 @@ void bellman_ford(int s) {
 		if (!update)break;
 	}
 }
-
+//２回b_fをする方がいい？
 bool find_negative_loop() {
 	memset(d, 0, sizeof(d));
 	for (int i = 0; i < V; i++) {
