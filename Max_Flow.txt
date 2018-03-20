@@ -3,8 +3,10 @@
 const int MAX_V;
 
 // 行先,容量,逆辺
-struct edge { int to, cap, rev; };
-
+struct edge {
+	int to, cap, rev;
+	edge(int to, int cap, int rev) :to(to), cap(cap), rev(rev) {};
+};
 vector<edge>G[MAX_V];
 int level[MAX_V];	//sからの距離
 int iter[MAX_V];	//どこまで調べ終わったか
