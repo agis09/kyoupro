@@ -1,6 +1,6 @@
 struct edge { int to, cost; };
 typedef pair<int, int>P;
-int nodeN;
+int N;
 vector<edge>G[MAX_N];
 int d[MAX_N];
 int pre[MAX_N];
